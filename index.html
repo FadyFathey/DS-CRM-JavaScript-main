@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!--Bootstrap 5 icons CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- Font Awesome Sheet -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Project Name -->
+    <title>DR Seoudi</title>
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="image/Doctor-Seoudi-FavIcon.png" type="image/x-icon" />
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #printSection,
+            #printSection * {
+                visibility: visible;
+            }
+
+            #printSection {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 5cm;
+                height: 2.5cm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Row -->
+    <section class="p-3">
+        <div class="row">
+            <div class="col-12">
+                <button class="button-59 newUser" data-bs-toggle="modal" data-bs-target="#userForm">
+                    New Product <i class="fa-solid fa-shop icon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-hover mt-3 text-center table-bordered">
+                    <thead>
+                        <tr>
+                            <th>P.No</th>
+                            <th>Picture</th>
+                            <th>P.Name</th>
+                            <th>Barcode</th>
+                            <th>Our Barcode</th>
+                            <th>Category</th>
+                            <th>Sub.Category</th>
+                            <th>Brand</th>
+                            <th>Color</th>
+                            <th>Size 1</th>
+                            <th>Size 2</th>
+                            <th>Size 3</th>
+                            <th>Size 4</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- End Row -->
+    <!-- Start Modal Form -->
+    <div class="modal fade" id="userForm">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Fill the Form</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" id="myForm">
+                        <div class="card imgholder">
+                            <label for="imgInput" class="upload">
+                                <input type="file" name="" id="imgInput" required />
+                                <i class="bi bi-plus-circle-dotted"></i>
+                            </label>
+                            <img id="imgPreview" src="./image/Profile Icon.webp" alt="" width="200" height="200"
+                                class="img" />
+                        </div>
+                        <div class="inputField">
+                            <div>
+                                <label for="name">P.Name:</label>
+                                <input type="text" name="" id="name" required />
+                            </div>
+                            <div>
+                                <label for="age">QR Code:</label>
+                                <input type="text" name="" id="age" required />
+                            </div>
+                            <div>
+                                <label for="post">Our Barcode:</label>
+                                <input type="text" name="" id="post" required disabled value="A-0040-Z" />
+                            </div>
+                            <div>
+                                <label for="category">Category:</label>
+                                <input type="text" id="categoryInput" placeholder="Enter Category" />
+                                <select id="category">
+                                    <option value="">Select Category</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="subcategory">Sub.Category:</label>
+                                <input type="text" id="subcategoryInput" placeholder="Enter Subcategory" />
+                                <select id="subcategory">
+                                    <option value="">Select Subcategory</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="brand">Brand:</label>
+                                <input type="text" id="brandInput" placeholder="Enter Brand" />
+                                <select id="brand">
+                                    <option value="">Select Brand</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="color">Color:</label>
+                                <input type="text" id="colorInput" placeholder="Enter Color" />
+                                <select id="color">
+                                    <option value="">Select Color</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Size 1:</label>
+                                <input type="text" id="size1-1" placeholder="Input 1" />
+                                <input type="text" id="size1-2" placeholder="Input 2" />
+                                <input type="text" id="size1-3" placeholder="Input 3" />
+                            </div>
+                            <div>
+                                <label>Size 2:</label>
+                                <input type="text" id="size2-1" placeholder="Input 1" />
+                                <input type="text" id="size2-2" placeholder="Input 2" />
+                                <input type="text" id="size2-3" placeholder="Input 3" />
+                            </div>
+                            <div>
+                                <label>Size 3:</label>
+                                <input type="text" id="size3-1" placeholder="Input 1" />
+                                <input type="text" id="size3-2" placeholder="Input 2" />
+                                <input type="text" id="size3-3" placeholder="Input 3" />
+                            </div>
+                            <div>
+                                <label>Size 4:</label>
+                                <input type="text" id="size4-1" placeholder="Input 1" />
+                                <input type="text" id="size4-2" placeholder="Input 2" />
+                                <input type="text" id="size4-3" placeholder="Input 3" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" form="myForm" class="btn btn-primary submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Form -->
+    <!-- Start Barcode Modal -->
+    <div class="modal fade" id="barcodeModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Print Details</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="printSection">
+                        <p id="productDetails"></p>
+                    </div>
+                    <button class="btn btn-primary" onclick="printContent()">
+                        Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Barcode Modal -->
+    <!-- Start JavaScript Sheets -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Input fields
+            const categoryInput = document.getElementById("categoryInput");
+            const subcategoryInput = document.getElementById("subcategoryInput");
+            const brandInput = document.getElementById("brandInput");
+            const colorInput = document.getElementById("colorInput");
+            const imgInput = document.getElementById("imgInput");
+            const imgPreview = document.getElementById("imgPreview");
+
+            // Dropdowns
+            const categorySelect = document.getElementById("category");
+            const subcategorySelect = document.getElementById("subcategory");
+            const brandSelect = document.getElementById("brand");
+            const colorSelect = document.getElementById("color");
+
+            // Preview image on selection
+            imgInput.addEventListener("change", function () {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imgPreview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Function to add option to select
+            function addOption(select, value, text) {
+                const option = document.createElement("option");
+                option.value = value;
+                option.textContent = text;
+                select.appendChild(option);
+            }
+
+            // Event listener for category input
+            categoryInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    const categoryValue = categoryInput.value.trim();
+                    if (categoryValue) {
+                        addOption(categorySelect, categoryValue, categoryValue);
+                        categoryInput.value = "";
+                    }
+                }
+            });
+
+            // Event listener for category select
+            categorySelect.addEventListener("change", function (event) {
+                categoryInput.value = categorySelect.value;
+                categoryInput.required = false;
+            });
+
+            // Event listener for subcategory input
+            subcategoryInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    const subcategoryValue = subcategoryInput.value.trim();
+                    if (subcategoryValue) {
+                        addOption(subcategorySelect, subcategoryValue, subcategoryValue);
+                        subcategoryInput.value = "";
+                    }
+                }
+            });
+
+            // Event listener for subcategory select
+            subcategorySelect.addEventListener("change", function (event) {
+                subcategoryInput.value = subcategorySelect.value;
+                subcategoryInput.required = false;
+            });
+
+            // Event listener for brand input
+            brandInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    const brandValue = brandInput.value.trim();
+                    if (brandValue) {
+                        addOption(brandSelect, brandValue, brandValue);
+                        brandInput.value = "";
+                    }
+                }
+            });
+
+            // Event listener for brand select
+            brandSelect.addEventListener("change", function (event) {
+                brandInput.value = brandSelect.value;
+                brandInput.required = false;
+            });
+
+            // Event listener for color input
+            colorInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    const colorValue = colorInput.value.trim();
+                    if (colorValue) {
+                        addOption(colorSelect, colorValue, colorValue);
+                        colorInput.value = "";
+                    }
+                }
+            });
+
+            // Event listener for color select
+            colorSelect.addEventListener("change", function (event) {
+                colorInput.value = colorSelect.value;
+                colorInput.required = false;
+            });
+
+            // Handle form submission
+            let productNumber = 1;
+            document
+                .getElementById("myForm")
+                .addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    // Collect form data
+                    const name = document.getElementById("name").value;
+                    const age = document.getElementById("age").value;
+                    const post = document.getElementById("post").value;
+                    const category = categoryInput.value || categorySelect.value;
+                    const subcategory =
+                        subcategoryInput.value || subcategorySelect.value;
+                    const brand = brandInput.value || brandSelect.value;
+                    const color = colorInput.value || colorSelect.value;
+                    const size1 = `${document.getElementById("size1-1").value}, ${document.getElementById("size1-2").value
+                        }, ${document.getElementById("size1-3").value}`;
+                    const size2 = `${document.getElementById("size2-1").value}, ${document.getElementById("size2-2").value
+                        }, ${document.getElementById("size2-3").value}`;
+                    const size3 = `${document.getElementById("size3-1").value}, ${document.getElementById("size3-2").value
+                        }, ${document.getElementById("size3-3").value}`;
+                    const size4 = `${document.getElementById("size4-1").value}, ${document.getElementById("size4-2").value
+                        }, ${document.getElementById("size4-3").value}`;
+                    const imgFile = imgInput.files[0];
+
+                    // Validate required fields
+                    if (!category && !categoryInput.value) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    if (!subcategory && !subcategoryInput.value) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    if (!brand && !brandInput.value) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    if (!color && !colorInput.value) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    if (!imgFile) {
+                        alert("Please select an image.");
+                        return;
+                    }
+
+                    // Read the image file as a data URL
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const imgSrc = e.target.result;
+
+                        // Create new table row
+                        const tableBody = document.getElementById("data");
+                        const newRow = document.createElement("tr");
+
+                        newRow.innerHTML = `
+                        <td>${productNumber++}</td>
+                        <td><img src="${imgSrc}" alt="" width="50" height="50" /></td>
+                        <td>${name}</td>
+                        <td>${age}</td>
+                        <td>${post}</td>
+                        <td>${category}</td>
+                        <td>${subcategory}</td>
+                        <td>${brand}</td>
+                        <td>${color}</td>
+                        <td>${size1}</td>
+                        <td>${size2}</td>
+                        <td>${size3}</td>
+                        <td>${size4}</td>
+                        <td><button class="btn btn-danger deleteBtn">Delete</button></td>
+                    `;
+
+                        // Append new row to table
+                        tableBody.appendChild(newRow);
+
+                        // Add event listener to the delete button
+                        newRow
+                            .querySelector(".deleteBtn")
+                            .addEventListener("click", function () {
+                                newRow.remove();
+                            });
+
+                        // Update barcode modal with product details
+                        const productDetails = `
+                        <p><strong>Our Barcode:</strong> ${post}</p>
+                        <p><strong>Color:</strong> ${color}</p>
+                        <p><strong>Size 1:</strong> ${size1}</p>
+                        <p><strong>Size 2:</strong> ${size2}</p>
+                        <p><strong>Size 3:</strong> ${size3}</p>
+                        <p><strong>Size 4:</strong> ${size4}</p>
+                    `;
+                        document.getElementById("productDetails").innerHTML =
+                            productDetails;
+
+                        // Clear form fields
+                        document.getElementById("myForm").reset();
+                        imgPreview.src = "./image/Profile Icon.webp";
+                        categoryInput.value = "";
+                        subcategoryInput.value = "";
+                        brandInput.value = "";
+                        colorInput.value = "";
+                        categoryInput.required = true;
+                        subcategoryInput.required = true;
+                        brandInput.required = true;
+                        colorInput.required = true;
+
+                        // Hide form modal
+                        const userFormModal = new bootstrap.Modal(
+                            document.getElementById("userForm")
+                        );
+                        userFormModal.hide();
+
+                        // Show barcode modal
+                        const barcodeModal = new bootstrap.Modal(
+                            document.getElementById("barcodeModal")
+                        );
+                        barcodeModal.show();
+                    };
+                    reader.readAsDataURL(imgFile);
+                });
+        });
+
+        function printContent() {
+            window.print();
+        }
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome Sheet -->
+    <script src="all.min.css"></script>
+    <!-- JavaScript Sheet -->
+    <script src="js/app.js"></script>
+    <!-- End JavaScript Sheets -->
+</body>
+
+</html>
