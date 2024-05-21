@@ -41,10 +41,14 @@ Confirm the deletion in the prompt.
 Print Product Details:
 Click the "Print" button in the product details modal to print the product information.
 Screenshots
-![Product Form Modal](mnt/data/Screenshot (4).png)
-![Product List with Data](mnt/data/Screenshot (5).png)
-![Print Details Modal](mnt/data/Screenshot (6).png)
-![Product List](mnt/data/Screenshot (7).png)
+![Screenshot (4)](https://github.com/FadyFathey/DS-CRM-JavaScript-main/assets/117510974/35f5d79e-9dcf-46e1-b5ab-9186459d160e)
+
+![Screenshot (5)](https://github.com/FadyFathey/DS-CRM-JavaScript-main/assets/117510974/7d54c42b-a245-4895-b9f0-4365d35d8959)
+
+![Screenshot (6)](https://github.com/FadyFathey/DS-CRM-JavaScript-main/assets/117510974/b613814a-6d6d-414d-9dcf-544000126350)
+
+![Screenshot (7)](https://github.com/FadyFathey/DS-CRM-JavaScript-main/assets/117510974/d2c1a740-a575-48d2-a90f-7c8efd6edc96)
+
 
 Technologies Used
 HTML5
